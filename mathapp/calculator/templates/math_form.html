@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 { margin: 50px auto; 
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+        form {
+            margin: 60px auto;
+            width: 500px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            padding: 30px;
+        }
+        button {
+            background-color:darkcyan;
+            border-radius: 10px;
+            padding: 15px 40px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Calculate</button>
+    </form>
+    
+</body>
+</html>

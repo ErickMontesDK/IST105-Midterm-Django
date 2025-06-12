@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Result</title>
+    <style>
+        h1 { margin: 50px auto; 
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    main {
+        margin: 60px auto;
+        width: 500px;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 30px;
+    }
+    main div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .error {
+        color: red;
+    }
+    button {
+        background-color:darkcyan;
+        border-radius: 10px;
+        padding: 15px 40px;
+    }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Calculator Result</h1>
+        <main>
+            <div class="user_input">
+                <ul>
+                    <li>Value 1: {{input1}}</li>
+                    <li>Value 2: {{input2}}</li>
+                    <li>Operation: {{operation}}</li>
+                </ul>
+            </div>
+            {% if error %}
+                <div class="error">
+                    <h2>Error:</h2>
+                    {{ error }}
+                </div>
+            {% else %}
+                <div class="result">
+                    <h2>Result:</h2>
+                    {{ result }}
+                </div>
+                {% if extra_logic%}
+                    <div class="extra_logic">
+                        <h2>Extra logic result</h2>
+                        {{ extra_logic }}
+                    </div>
+                {% endif %}
+            {% endif %}
+
+        </main>
+        
+        
+    </div>
+</body>
+</html>
